@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "funwithactivitypoc",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authfunwithactivitypoce1055bad",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
