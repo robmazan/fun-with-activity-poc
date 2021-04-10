@@ -15,6 +15,11 @@ exports.fetch = async ({ height, weight, dob }) => {
     session_token: crypto.randomBytes(16).toString("hex"),
   })).data || [];
 
+  if (!Array.isArray(recommendations)) {
+    console.error("Invalid response from Service 2", recommendations);
+    return [];
+  }
+
   return recommendations.map(({ priority, title, details }) => ({
     priority,
     recommendation: [title, details]

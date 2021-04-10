@@ -24,7 +24,7 @@
       "function": {
         "fwarecommend": {
           "deploymentBucketName": "amplify-funwithactivitypoc-dev-213849-deployment",
-          "s3Key": "amplify-builds/fwarecommend-31464d71713670326f65-build.zip"
+          "s3Key": "amplify-builds/fwarecommend-633261784a3673536279-build.zip"
         }
       }
     }

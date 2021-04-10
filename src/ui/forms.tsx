@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Form = styled.form`
     max-width: 300px;
-    margin: 5px auto;
+    margin: 0 auto;
     border: 1px solid lightgray;
     border-radius: 4px;
 `;
@@ -22,6 +22,7 @@ export const FormSectionTitle = styled.legend`
     margin-left: -10px;
     background-color: orange;
     width: calc(100% + 10px);
+    font-family: "Playfair Display", sans-serif;
 `;
 
 export const InputField = styled.input`
