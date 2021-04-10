@@ -2,6 +2,7 @@ import API, { graphqlOperation, GraphQLResult } from "@aws-amplify/api";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
+import { Redirect } from "react-router";
 import { Recommendation, RecommendationsQuery } from "../API";
 import { recommendations } from "../graphql/queries";
 import { useProfile } from "../profile";
@@ -50,7 +51,7 @@ const RecommendationTitle = styled.h3`
 const RecommendationBody = styled.p``;
 
 export const Recommendations: React.FC = () => {
-  const { profile } = useProfile();
+  const { profile, isLoading } = useProfile();
   const [recommendationItems, setRecommendationItems] = useState<
     Recommendation[] | null
   >(null);
@@ -72,6 +73,13 @@ export const Recommendations: React.FC = () => {
       })();
     }
   }, [profile]);
+
+  if (!isLoading && profile?.id === undefined) {
+    console.log(profile)
+    return (
+      <Redirect to="/profile" />
+    );
+  }
 
   return (
     <>
