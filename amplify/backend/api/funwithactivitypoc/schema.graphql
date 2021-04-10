@@ -18,5 +18,5 @@ input RecommendationsInput {
 
 type Recommendation {
   priority: Int!
-  recommendation: String!
+  recommendation: [String!]!
 }

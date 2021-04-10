@@ -1,10 +1,9 @@
+const { fetchRecommendations } = require("./aggregation");
+
 const resolvers = {
     Query: {
         recommendations: async ctx => {
-            return [{
-                priority: 42,
-                recommendation: "test"
-            }];
+            return fetchRecommendations(ctx.arguments.input);
         }
     }
 };

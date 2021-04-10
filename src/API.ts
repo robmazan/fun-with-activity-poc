@@ -105,7 +105,7 @@ export type RecommendationsInput = {
 export type Recommendation = {
   __typename: "Recommendation",
   priority?: number,
-  recommendation?: string,
+  recommendation?: Array< string >,
 };
 
 export type ModelProfileFilterInput = {
@@ -206,7 +206,7 @@ export type RecommendationsQuery = {
   recommendations?:  Array< {
     __typename: "Recommendation",
     priority: number,
-    recommendation: string,
+    recommendation: Array< string >,
   } > | null,
 };
 
