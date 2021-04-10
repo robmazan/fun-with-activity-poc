@@ -5,3 +5,18 @@ type Profile @model @auth(rules: [{ allow: owner }]) {
   weight: Float!
   dob: AWSDate!
 }
+
+type Query {
+  recommendations(input: RecommendationsInput!): [Recommendation!] @function(name: "fwarecommend-${env}")
+}
+
+input RecommendationsInput {
+  height: Float!
+  weight: Float!
+  dob: AWSDate!
+}
+
+type Recommendation {
+  priority: Int!
+  recommendation: String!
+}

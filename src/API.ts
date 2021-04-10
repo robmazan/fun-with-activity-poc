@@ -96,6 +96,18 @@ export type DeleteProfileInput = {
   id?: string | null,
 };
 
+export type RecommendationsInput = {
+  height: number,
+  weight: number,
+  dob: string,
+};
+
+export type Recommendation = {
+  __typename: "Recommendation",
+  priority?: number,
+  recommendation?: string,
+};
+
 export type ModelProfileFilterInput = {
   id?: ModelIDInput | null,
   name?: ModelStringInput | null,
@@ -184,6 +196,18 @@ export type DeleteProfileMutation = {
     updatedAt: string,
     owner?: string | null,
   } | null,
+};
+
+export type RecommendationsQueryVariables = {
+  input?: RecommendationsInput,
+};
+
+export type RecommendationsQuery = {
+  recommendations?:  Array< {
+    __typename: "Recommendation",
+    priority: number,
+    recommendation: string,
+  } > | null,
 };
 
 export type GetProfileQueryVariables = {

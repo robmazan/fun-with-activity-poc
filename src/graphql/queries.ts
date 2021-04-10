@@ -2,6 +2,14 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const recommendations = /* GraphQL */ `
+  query Recommendations($input: RecommendationsInput!) {
+    recommendations(input: $input) {
+      priority
+      recommendation
+    }
+  }
+`;
 export const getProfile = /* GraphQL */ `
   query GetProfile($id: ID!) {
     getProfile(id: $id) {
